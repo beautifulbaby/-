@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>属性演示</title>
+  </head>
+  <body>
+    <video id="myVideo" width="640px" controls/>
+      <!--<source src="http://video.mukewang.com/mk.mp4" type="video/mp4" />-->
+      <source src="../imooc.mp4" type="video/mp4" />
+      <source src="../imooc.webm" type="video/webm" />
+      <source src="../imooc.ogv" type="video/ogv" />
+      您的浏览器不支持video标签。
+    </video>
+    <button id="play">播放</button>
+    <button id="pause">暂停</button>
+    <script>
+      <!-- 常用属性 -->
+      var v = document.getElementById('myVideo');
+      var playBtn = document.getElementById('play');
+      var pauseBtn = document.getElementById('pause');
+      v.onloadedmetadata = function() {
+        console.log("当前视频播放地址：" + v.currentSrc);
+        console.log("视频总时长：" + v.duration);
+        console.log("当前播放的倍速：" + v.playbackRate);
+        console.log("是否暂停：" + v.paused);
+        console.log("是否结束：" + v.ended);
+        console.log("是否静音：" + v.muted);
+      }
+      v.ontimeupdate = function() {
+        console.log("当前播放时间：" + v.currentTime);
+        console.log("当前缓冲量：" + v.buffered.end(0));
+      }
+      v.on = function() {
+        console.log("当前音量：" + v.volume);
+      }
+      playBtn.onclick = function() {
+        v.play();
+      }
+      pauseBtn.onclick = function() {
+        v.pause();
+      }
+    </script>
+  </body>
+</html>
