@@ -1,0 +1,24 @@
+body{
+    background: rgb(206, 88, 9);
+}
+.center{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+/* 头部 */
+.head{
+    width: 350px;
+    height: 400px;
+    border-radius: 175px / 50px 50px 170px 170px;
+    background-color: rgb(252, 240, 225);
+    position: relative;
+    top: 100px;
+}
+/* 眉毛 */
+.eyebrow{
+    width: 75px;
+    height: 30px;
+    background: #000;
+    position: 
+}
